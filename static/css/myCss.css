@@ -3,9 +3,10 @@
   --lightgrey: #d9d9d9;
 }
 
+
 body {
     font-family: 'Open Sans';
-    margin: 10px;
+    margin: 0px;
     margin-bottom: 100px;
 }
 
@@ -35,16 +36,19 @@ header a:hover {
   background: var(--lightgrey);
 }
 
-sidebar {
+#mySidebar {
   height:100%;
-  width:100%;
+  width:200px;
+  margin: 0;
+  padding: 0;
   background-color:#000000;
   color: var(--lightgrey);
   position:fixed!important;
   z-index:1;
-  /* overflow:auto; */
 }
-  
+
+
+
 .animate-top{
   position:relative;
   animation:animatetop 0.4s
@@ -54,7 +58,7 @@ sidebar {
   from{top:-300px;opacity:1} to{top:0;opacity:1}
 }
 
-sidebar ul {
+#mySidebar ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -63,80 +67,80 @@ sidebar ul {
   text-align: center;
 }
 
-sidebar a {
+#mySidebar a {
   text-decoration: none;
   color: var(--darkgrey);
   font-size: 30px;
 }
 
-sidebar a:hover {
+#mySidebar a:hover {
   color: #FFFFFF;
 }
 
 footer {
-    padding: 10px;
-    /* padding-bottom: 0px; */
-    position: fixed;
-    opacity: 0.4;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: var(--darkgrey);
-    color: var(--lightgrey);
-    text-align: center;
+  padding: 10px;
+  /* padding-bottom: 0px; */
+  position: fixed;
+  opacity: 0.4;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--darkgrey);
+  color: var(--lightgrey);
+  text-align: center;
 }
 
 
 .grid-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .grid-item {
-    padding: 10px;
-    width: 90%;
+  padding: 10px;
+  width: 90%;
 }
 
 .container {
-  position: relative;
-  width: 100%;
+position: relative;
+width: 100%;
 }
 
 .image {
-  display: block;
-  width: 100%;
-  height: auto;
+display: block;
+width: 100%;
+height: auto;
 }
 
 .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #FFFFFF;
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+height: 100%;
+width: 100%;
+opacity: 0;
+transition: .5s ease;
+background-color: #FFFFFF;
 }
 
 .container:hover .overlay {
-  opacity: 0.6;
+opacity: 0.6;
 }
 
 .text {
-  color: var(--darkgrey);
-  font-size: 30px;
-  position: absolute;
-  bottom: 10%;
-  right: 10%;
-  /* transform: translate(-50%, -50%); */
-  text-align: bottom;
+color: var(--darkgrey);
+font-size: 30px;
+position: absolute;
+bottom: 10%;
+right: 10%;
+/* transform: translate(-50%, -50%); */
+text-align: bottom;
 }
 
 .fa {
-  padding-left: 5px;
-  padding-right: 5px;
+padding-left: 5px;
+padding-right: 5px;
 }
