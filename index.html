@@ -1,18 +1,19 @@
 <!doctype html>
 <html>
-<meta charset="UTF-8">
-<meta name="viewport">
-<meta content="width=device-width, initial-scale=1">
-<title>Joshua Ruf</title>
-<link rel="stylesheet" href="/static/css/myCss.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel='shortcut icon' type='image/x-icon' href="/static/favicon.ico" />
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
-<script src="/static/js/myJavaScript.js"></script> 
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <meta content="width=device-width, initial-scale=1">
+    <title>Joshua Ruf</title>
+    <link rel="stylesheet" href="/static/css/myCss.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='shortcut icon' type='image/x-icon' href="/static/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <script src="/static/js/myJavaScript.js"></script> 
+</head>
 <body>
-<div class = "animate-top" style="display:none;padding-top:150px" id="mySidebar">
-    <a onclick="w3_close()"><i class="fa fa-remove fa-2x" style="position:absolute;right:0;top:0;"></i></a>
+<div class = "animate-top" id="mySidebar">
+    <span class="fa fa-remove fa-3x" onclick="w3_close()"></span>
     <ul>
         <li><a href="/index.html">Home</a></li>
         <li><a href="/about.html">About</a></li>
@@ -21,7 +22,7 @@
 </div>
 
 <header>
-    <a onclick="w3_open()"><i class="fa fa-bars fa-2x"></i></a> 
+    <span class="fa fa-bars fa-3x" onclick="w3_open()"></span> 
     <h1>Joshua Ruf</h1>
     <p>Creative Coder.</p>
 </header>
@@ -29,12 +30,17 @@
 <div>
     
 
+<div id="myModal" class="modal">
+    <span class="close fa fa-remove fa-3x"></span>
+    <img class="modal-content animate-opacity" id="myImg">
+</div>
+
 <div class="grid-container">
 
     
     <div class="grid-item">
         <div class="container">
-            <img src="/static/images/20201011_really_hard_bejeweled.svg" width="100%">
+            <img src="/static/images/20201011_really_hard_bejeweled.svg">
             <div class="overlay">
                 <div class="text">
                     really hard bejeweled
@@ -45,7 +51,7 @@
     
     <div class="grid-item">
         <div class="container">
-            <img src="/static/images/20201010_wbwc.svg" width="100%">
+            <img src="/static/images/20201010_wbwc.svg">
             <div class="overlay">
                 <div class="text">
                     WbWc
@@ -56,7 +62,7 @@
     
     <div class="grid-item">
         <div class="container">
-            <img src="/static/images/20200719_sins_on_sins.png" width="100%">
+            <img src="/static/images/20200719_sins_on_sins.png">
             <div class="overlay">
                 <div class="text">
                     sins on sins II
@@ -67,7 +73,7 @@
     
     <div class="grid-item">
         <div class="container">
-            <img src="/static/images/20200718_sins_on_sins.png" width="100%">
+            <img src="/static/images/20200718_sins_on_sins.png">
             <div class="overlay">
                 <div class="text">
                     sins on sins
@@ -78,7 +84,7 @@
     
     <div class="grid-item">
         <div class="container">
-            <img src="/static/images/20200711_cityscape.png" width="100%">
+            <img src="/static/images/20200711_cityscape.png">
             <div class="overlay">
                 <div class="text">
                     cityscape
@@ -89,7 +95,7 @@
     
     <div class="grid-item">
         <div class="container">
-            <img src="/static/images/20190718_claws_V2.png" width="100%">
+            <img src="/static/images/20190718_claws_V2.png">
             <div class="overlay">
                 <div class="text">
                     claws II
@@ -98,9 +104,9 @@
         </div>
     </div>
     
-    <div class="grid-item no-show">
+    <div class="grid-item no-show animate-top">
         <div class="container">
-            <img src="/static/images/20190718_claws.png" width="100%">
+            <img src="/static/images/20190718_claws.png">
             <div class="overlay">
                 <div class="text">
                     claws
@@ -109,9 +115,9 @@
         </div>
     </div>
     
-    <div class="grid-item no-show">
+    <div class="grid-item no-show animate-top">
         <div class="container">
-            <img src="/static/images/20190718_circles.jpg" width="100%">
+            <img src="/static/images/20190718_circles.jpg">
             <div class="overlay">
                 <div class="text">
                     circles
@@ -121,10 +127,53 @@
     </div>
     
 
+
 </div>
 
-<button class="button button-hover" onclick="setTimeout(infiniteScroll, 200)">Show More</button> 
 
+
+<button class="button button-hover" onclick="setTimeout(infiniteScroll, 300)">Show More</button> 
+<script>
+
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("myImg");
+
+    // display the modal with the image from the container you click
+    function openModal(){
+        modal.style.display = 'block';
+        modalImg.src = this.getElementsByTagName('img')[0].src;
+    };
+
+    // apply to all containers
+    var containers = document.getElementsByClassName('container');
+    for(i=0; i < containers.length; i++){
+        containers[i].onclick = openModal;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+        modal.style.display = "none";
+    }
+
+    //exit modal with escape key
+    function escapeExit(evt){
+
+        if (evt.keyCode === 27){
+            if(modal.style.display != "none"){
+                modal.style.display = "none";
+            } else if(document.getElementById("mySidebar").style.display != "none"){
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        }
+    };
+
+    document.onkeydown = escapeExit;
+
+
+</script>
 
 
 </div>
