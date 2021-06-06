@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <meta content="width=device-width, initial-scale=1">
+    <title>Joshua Ruf</title>
+    <link rel="stylesheet" href="/static/css/myCss.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='shortcut icon' type='image/x-icon' href="/static/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <script src="/static/js/myJavaScript.js"></script> 
+</head>
+<body>
+    <div class="animate-top" id="mySidebar">
+        <span class="fa fa-remove fa-3x" onclick="w3_close()"></span>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/cv.html">CV</a></li>
+            <!-- <li><a href="/contact.html">Contact</a></li> -->
+        </ul>
+    </div>
+
+    <header>
+        <span class="fa fa-bars fa-3x" onclick="w3_open()"></span> 
+        <h1>Joshua Ruf</h1>
+        <p>Creative Coder.</p>
+    </header>
+
+    <div>
+        
+
+<div id="myModal">
+    <span id="modalClose" class="fa fa-remove fa-3x"></span>
+    <h3 id="modalTitle"></h4>
+    <img class="animate-opacity" id="modalImg">
+</div>
+
+<div class="grid-container">
+    
+    <div class="grid-item">
+        <div class="container">
+            <img src="/static/images/20210605_1.svg" title="daydreaming at night">
+            <div class="overlay">
+                <div class="text">
+                    daydreaming at night
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid-item">
+        <div class="container">
+            <img src="/static/images/20210302_1.svg" title="an origami day">
+            <div class="overlay">
+                <div class="text">
+                    an origami day
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid-item">
+        <div class="container">
+            <img src="/static/images/20201011_1.svg" title="Bejeweled bonus round">
+            <div class="overlay">
+                <div class="text">
+                    Bejeweled bonus round
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid-item">
+        <div class="container">
+            <img src="/static/images/20201010_1.svg" title="like a printer out of ink">
+            <div class="overlay">
+                <div class="text">
+                    like a printer out of ink
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid-item">
+        <div class="container">
+            <img src="/static/images/20200719_1.png" title="just another day at the beach">
+            <div class="overlay">
+                <div class="text">
+                    just another day at the beach
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid-item">
+        <div class="container">
+            <img src="/static/images/20200718_1.png" title="sins on sins">
+            <div class="overlay">
+                <div class="text">
+                    sins on sins
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid-item no-show animate-top">
+        <div class="container">
+            <img src="/static/images/20200711_1.png" title="a view from across the Hudson">
+            <div class="overlay">
+                <div class="text">
+                    a view from across the Hudson
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid-item no-show animate-top">
+        <div class="container">
+            <img src="/static/images/20200101_1.gif" title="what are circles if not a square?">
+            <div class="overlay">
+                <div class="text">
+                    what are circles if not a square?
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid-item no-show animate-top">
+        <div class="container">
+            <img src="/static/images/20190718_3.png" title="claws">
+            <div class="overlay">
+                <div class="text">
+                    claws
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid-item no-show animate-top">
+        <div class="container">
+            <img src="/static/images/20190718_1.jpg" title="we can&#39;t keep stopping at every &#34;sop&#34; sign">
+            <div class="overlay">
+                <div class="text">
+                    we can&#39;t keep stopping at every &#34;sop&#34; sign
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<button id="show-more-button" onclick="infiniteScroll()">Show More</button> 
+
+<script>
+
+    var modal = document.getElementById("myModal"),
+        modalImg = document.getElementById("modalImg"),
+        modalTitle = document.getElementById("modalTitle");
+
+    // display the modal with the image from the container you click
+    function openModal(){
+        modal.style.display = 'block';
+        modalImg.src = this.getElementsByTagName('img')[0].src;
+        modalTitle.innerText = this.getElementsByTagName('img')[0].title;
+    };
+
+    // apply to all containers
+    var containers = document.getElementsByClassName('container');
+    for(let i=0;i<containers.length;i++){
+        containers[i].onclick = openModal;
+    }
+
+    // Get the <span> element that closes the modal
+    var modalClose = document.getElementById("modalClose");
+
+    // When the user clicks on <span> (x), close the modal
+    modalClose.onclick = function() { 
+        modal.style.display = "none";
+    }
+
+    //exit modal with escape key
+    function escapeExit(evt){
+        if (evt.keyCode === 27){
+            if(modal.style.display != "none"){
+                modal.style.display = "none";
+            } else if(document.getElementById("mySidebar").style.display != "none"){
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        }
+    };
+
+    document.onkeydown = escapeExit;
+
+
+</script>
+
+
+    </div>
+
+    <footer>
+        <a href="https://github.com/joshua-ruf" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+        <a href="https://www.linkedin.com/in/joshua-ruf-b97938199" target="_blank"><i class="fa fa-linkedin fa-2x" height="20px"></i></a>
+        <a href="https://twitter.com/mrjruf" target="_blank"><i class="fa fa-twitter fa-2x" height="20px"></i></a>
+        <a href="/static/email.txt" target="_blank"><i class="fa fa-envelope-o fa-2x" height="20px"></i></a>
+    </footer>
+</body>
+</html>

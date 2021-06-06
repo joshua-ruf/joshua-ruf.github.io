@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <meta content="width=device-width, initial-scale=1">
+    <title>Joshua Ruf</title>
+    <link rel="stylesheet" href="/static/css/myCss.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='shortcut icon' type='image/x-icon' href="/static/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <script src="/static/js/myJavaScript.js"></script> 
+</head>
+<body>
+    <div class="animate-top" id="mySidebar">
+        <span class="fa fa-remove fa-3x" onclick="w3_close()"></span>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/cv.html">CV</a></li>
+            <!-- <li><a href="/contact.html">Contact</a></li> -->
+        </ul>
+    </div>
+
+    <header>
+        <span class="fa fa-bars fa-3x" onclick="w3_open()"></span> 
+        <h1>Joshua Ruf</h1>
+        <p>Creative Coder.</p>
+    </header>
+
+    <div>
+        
+
+<!-- <embed src="/static/20210606_resume.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf"></embed> -->
+<object type="application/pdf" data="/static/20210606_cv.pdf?#scrollbar=0&toolbar=0&navpanes=0">
+    <p>Sorry, the PDF cannot be displayed.</p>
+</object>
+
+<style>
+object {
+    margin: 0 auto;
+    display: block;
+    width: 60%;
+    height: 100vh;
+}
+</style>
+
+
+    </div>
+
+    <footer>
+        <a href="https://github.com/joshua-ruf" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+        <a href="https://www.linkedin.com/in/joshua-ruf-b97938199" target="_blank"><i class="fa fa-linkedin fa-2x" height="20px"></i></a>
+        <a href="https://twitter.com/mrjruf" target="_blank"><i class="fa fa-twitter fa-2x" height="20px"></i></a>
+        <a href="/static/email.txt" target="_blank"><i class="fa fa-envelope-o fa-2x" height="20px"></i></a>
+    </footer>
+</body>
+</html>

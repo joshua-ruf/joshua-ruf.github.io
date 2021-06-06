@@ -1,0 +1,245 @@
+:root {
+  --darkgrey: #404040;
+  --lightgrey: #d9d9d9;
+}
+
+body {
+    font-family: 'Open Sans';
+    margin: 0px 15px 100px 15px;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    background: white;
+    color: var(--darkgrey);
+    opacity: 0.4;
+}
+
+header span {
+  color: var(--darkgrey);
+  position:absolute;
+  right: 10px;
+  top: 5px;
+}
+
+header span:hover {
+  background: var(--lightgrey);
+  cursor: pointer;
+}
+
+#mySidebar {
+  height:100%;
+  width: 100%;
+  left: 0;
+  padding-top: 150px;
+  background-color:#000000;
+  color: var(--lightgrey);
+  position:absolute;
+  z-index:1;
+  display:none;
+}
+
+#mySidebar span {
+  text-decoration: none;
+  color: var(--darkgrey);
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+#mySidebar span:hover {
+  color: #FFFFFF;
+  cursor:pointer;
+}
+
+#mySidebar ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+#mySidebar a {
+  text-decoration: none;
+  color: var(--darkgrey);
+  font-size: 30px;
+}
+
+#mySidebar a:hover {
+  color: #FFFFFF;
+  cursor:pointer;
+}
+
+.animate-top{
+  position:relative;
+  animation:animatetop 0.4s
+}
+
+@keyframes animatetop{
+  from{top:-300px;opacity:0.5} to{top:0;opacity:1}
+}
+
+.animate-opacity{
+  animation:animateopacity 0.4s;
+}
+
+@keyframes animateopacity{
+  from{opacity:0.5} to{opacity:1}
+}
+
+/* FOOTER */
+footer {
+  padding: 10px;
+  position: fixed;
+  opacity: 0.5;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--darkgrey);
+  color: var(--lightgrey);
+  text-align: center;
+}
+
+footer a {
+  color: white;
+}
+
+.grid-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+@media (max-width: 1000px) {
+  .grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+.grid-item {
+  margin: 10 10 0 10;
+  padding: 0;
+}
+
+.no-show {
+  display:none;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+.container img {
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .4s ease;
+  background-color: #FFFFFF;
+}
+
+.container:hover .overlay {
+  opacity: 0.4;
+}
+
+.text {
+  color: var(--darkgrey);
+  font-size: 20px;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  /* transform: translate(-50%, -50%); */
+  text-align: bottom right;
+}
+
+.fa {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#show-more-button {
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  position: center;
+  font-size: 16px;
+  padding: 8px 16px;
+  margin: 16px;
+  background-color: var(--darkgrey);
+  color: #FFFFFF;
+  opacity: 0.5;
+}
+
+#show-more-button:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+/* The Modal (background) */
+#myModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 50px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #ffffff;
+}
+
+/* Modal Content (image) */
+#modalImg {
+  margin: auto;
+  display: block;
+  max-width:90%;
+  max-height:90%;
+}
+
+/* The Close Button */
+#modalClose {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: var(--lightgrey);
+  transition: 0.3s;
+}
+
+#modalClose:hover {
+  color: var(--darkgrey);
+  cursor: pointer;
+}
+
+#modalTitle {
+  color: var(--darkgrey);
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  margin-top: 5px;
+  margin-left: 10px;
+  padding-top: 0px;
+  padding-left: 0px;
+}

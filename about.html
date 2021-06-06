@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <meta content="width=device-width, initial-scale=1">
+    <title>Joshua Ruf</title>
+    <link rel="stylesheet" href="/static/css/myCss.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='shortcut icon' type='image/x-icon' href="/static/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <script src="/static/js/myJavaScript.js"></script> 
+</head>
+<body>
+    <div class="animate-top" id="mySidebar">
+        <span class="fa fa-remove fa-3x" onclick="w3_close()"></span>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/cv.html">CV</a></li>
+            <!-- <li><a href="/contact.html">Contact</a></li> -->
+        </ul>
+    </div>
+
+    <header>
+        <span class="fa fa-bars fa-3x" onclick="w3_open()"></span> 
+        <h1>Joshua Ruf</h1>
+        <p>Creative Coder.</p>
+    </header>
+
+    <div>
+        
+
+<div class='grid-container', style='grid-template-columns: 1fr 1fr;'>
+    <div id="about-text" class='grid-item'>
+        <p>Hi there, thanks for checking out my site! I'm Josh – a data scientist, algorithmic artist, and programming hobbyist. I first got into creative coding using the R programming language a few years ago, dubbing it <em>"aRt"</em>. My professional work, then and now, involves a lot of data-viz and programming, so it's been fun to think creatively about visualizing data beyond a strictly business context.</p>
+<p>What appeals to me about creating art with code is the ability to incorporate randomness. In general, humans are bad at being random, computers less so. In my work, I'll often create a relatively simple parameterized element and replicate it multiple times, sampling over some distribution and varying its parameters each time. </p>
+<p>More recently, I've made the shift from R's <a href="https://ggplot2.tidyverse.org/">ggplot2</a> to <a href="https://d3js.org/">D3.js</a>, which has opened up the door to interactive content. I'm looking forward sharing those pieces here soon, so stay tuned!</p>
+<p>If you'd like to learn more about my work as a data scientist, check out my <a href="/cv.html">CV</a> or GitHub. I'm always on the lookout for interesting projects and opportunities, so if you have something in mind and think it might be a good fit, please feel free to email or message me on LinkedIn.</p>
+    </div>
+    <div class = 'grid-item'>
+        <img src="/static/images/about_photo.png" width = "90%">
+    </div>
+    
+</div>
+<style>
+#about-text p {
+    margin-top: 0;
+}
+</style>
+
+
+    </div>
+
+    <footer>
+        <a href="https://github.com/joshua-ruf" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+        <a href="https://www.linkedin.com/in/joshua-ruf-b97938199" target="_blank"><i class="fa fa-linkedin fa-2x" height="20px"></i></a>
+        <a href="https://twitter.com/mrjruf" target="_blank"><i class="fa fa-twitter fa-2x" height="20px"></i></a>
+        <a href="/static/email.txt" target="_blank"><i class="fa fa-envelope-o fa-2x" height="20px"></i></a>
+    </footer>
+</body>
+</html>
